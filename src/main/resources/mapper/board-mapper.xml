@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.nowon.domain.dao.BoardMapper">
+  <select id="saveAll" resultType="com.green.nowon.domain.dto.BoardDTO">
+   	insert into board(title,content) values(#{title},#{content})
+  </select>
+  <select id="findByNo" resultType="com.green.nowon.domain.dto.BoardDTO">
+  	select * from board where no=#{no}
+  </select>
+</mapper>

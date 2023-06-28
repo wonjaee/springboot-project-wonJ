@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="//www.thymeleaf.org" 
+	th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
-<body>
+<main>
 	<h1>로그인페이지</h1>
 	<section>
 		<div>
-			<div>
-				<h1>아이디를 입력하세요</h1>
-				<input type="text" name="id" placeholder="아이디">
-			</div>
-			<div>
-				<h1>비밀번호를 입력하세요</h1>
-				<input type="password" name="password" placeholder="비밀번호">
-			</div>
+			<form action="/login-Proc" method="post">
+				<div>
+					<h1>아이디를 입력하세요</h1>
+					<input type="text" name="id" placeholder="아이디">
+				</div>
+				<div>
+					<h1>비밀번호를 입력하세요</h1>
+					<input type="password" name="password" placeholder="비밀번호">
+				</div>
+				<div>
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+					<button>로그인</button>
+				</div>
+			</form>
 		</div>
 	</section>
-</body>
+</main>
 </html>

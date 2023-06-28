@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org" 
+		th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
+    <head>
+    </head>
+	<main>
+		<table>
+			<tr>
+				<td>글번호</td>
+				<td th:text="${detail.no}"></td>
+			<tr>
+				<td>작성자</td>
+				<td th:text="${detail.writer}"></td>
+			</tr>
+			<tr>
+				<td>글제목</td>
+				<td  th:text="${detail.title}"></td>
+			</tr>
+			<tr>
+				<td>글내용</td>
+				<td th:text="${detail.content}"></td>
+			</tr>
+		</table>
+	</main>
+</html>

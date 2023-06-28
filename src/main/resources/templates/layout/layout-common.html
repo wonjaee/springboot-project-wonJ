@@ -3,8 +3,10 @@
     <head>
    	 	<meta charset="UTF-8">
     	<title>Insert title here</title>
-    	 <script src="/webjars/jquery/jquery.min.js"></script>
-    	 <th:block th:replace="${head}" />
+    	<script src="/webjars/jquery/jquery.min.js"></script>
+    	<link rel="stylesheet" href="/css/common.css">
+    	
+    	<th:block th:replace="${head}"/>
     </head>
 	 <body>
         <th:block th:insert="~{layout/header}" />
