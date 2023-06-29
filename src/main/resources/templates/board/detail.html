@@ -2,12 +2,13 @@
 <html xmlns:th="//www.thymeleaf.org" 
 		th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
     <head>
+    	 <script src="/js/detail.js"></script>
     </head>
 	<main>
 		<table>
 			<tr>
 				<td>글번호</td>
-				<td th:text="${detail.no}"></td>
+				<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
 			<tr>
 				<td>작성자</td>
 				<td th:text="${detail.writer}"></td>
@@ -21,5 +22,19 @@
 				<td th:text="${detail.content}"></td>
 			</tr>
 		</table>
+		<hr>
+		<div id="reply-area">
+			<form id="form-reply">
+				<p>
+					<input type="text" name="writer" placeholder="작성자">
+				</p>
+				<p>
+					<input type="text" name="content" placeholder="내용">
+				</p>
+				<p>
+					<button type="button" id="btnsave-reply">등록</button>
+				
+			</form>
+		</div>
 	</main>
 </html>

@@ -17,14 +17,17 @@ public class SecurityConfig {
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder(10);
 	}
+	//1.비동기로 게시글 불러오는도중 403 에러가나옴 
+	//2.admin 계정으로 로그인을했는데 admin게시글로 이동이안됨 
+	//3. aws 버킷 사용 설정방법
 	
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests(authorize -> authorize
 				.antMatchers("/","/**").permitAll()
-				.antMatchers("/css/**").permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN")
+				.antMatchers("/css/**","/js/**").permitAll()
+				.antMatchers("/admin/**").permitAll()//.hasRole("ADMIN")
 				.anyRequest().authenticated()
 			
 			).formLogin(form->
