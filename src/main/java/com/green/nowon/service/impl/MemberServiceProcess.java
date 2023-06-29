@@ -20,6 +20,7 @@ public class MemberServiceProcess implements MemberService{
 	private final MemberMapper mapper;
 	private final RoleMapper roleMapper;
 	private final PasswordEncoder encoder;
+	
 	@Override
 	public void memberSave(MemberDTO dto) {//role 입력은 두번해야함
 		System.out.println(">>>save전 no:"+dto.getNo());
@@ -35,6 +36,4 @@ public class MemberServiceProcess implements MemberService{
 				.role(MyRole.USER)
 				.build());
 	}
-
-
 }

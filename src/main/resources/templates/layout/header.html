@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="//www.thymeleaf.org"  
+	  xmlns:sec="//www.thymeleaf.org/extras/spring-security">
+	<link rel="stylesheet" href="/css/header.css">
    <main>
-   		<h1>header</h1>
-   		<a href="/boards">게시판</a>
-   		<a href="/signin">로그인</a>
-   		<a href="/signup">회원가입</a>
+   		<div class="header">
+	   		<h1>header</h1>
+	   		<div class="logo-size">
+	   			<p>원재</p>
+	   		</div>
+	   		<div class="menu">
+		   		<a href="/boards">게시판</a>
+		   		<th:block sec:authorize="isAnonymous()">
+			   		<a href="/signin">로그인</a>
+			   		<a href="/signup">회원가입</a>
+		   		</th:block>
+		   		<th:block sec:authorize="isAuthenticated()">
+			    	<form action="/logout" method="POST" style="display: inline-block;">
+			    		<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+			    		<button>로그아웃</button>
+			    	</form>
+			    	<a  href="/admin">관리자페이지</a>
+    			</th:block>
+	   		</div>
+   		</div>
    </main>
 </html>

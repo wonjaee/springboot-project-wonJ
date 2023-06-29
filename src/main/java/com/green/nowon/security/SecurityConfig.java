@@ -35,7 +35,14 @@ public class SecurityConfig {
 					.passwordParameter("password")
 					.defaultSuccessUrl("/",true)
 					.successHandler(mySuccessHandler())
-					.permitAll());
+					.permitAll()
+					
+			).logout(logout->logout
+					.logoutUrl("/logout")
+					.logoutSuccessUrl("/")
+					)
+			
+			;
 		
 		return http.build();
 	}

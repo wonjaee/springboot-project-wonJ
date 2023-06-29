@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.signup-sec{
+	width: 500px;
+	height: 500px;
+	
+}
+.wrap .s-logo {
+	margin : 50px 0 50px 0;
+}
+input{
+	margin-top:0.5em;
+	width:290px;
+	height: 50px;
+	border :1px solid grey;
+	border-radius: 8px;
+	padding-left:0.5em;
+}
+button{
+	width:290px;
+	height: 50px;
+	border :1px solid grey;
+	border-radius: 8px;
+}
+input::placeholder {
+ 
+  font-style: italic;
+  
+}
