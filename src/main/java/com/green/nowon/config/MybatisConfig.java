@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Configuration
 public class MybatisConfig {
-	
+	//https://gaeggu.tistory.com/33
 	//hikari bean 생성
 	@Bean
 	DataSource dataSource() {
