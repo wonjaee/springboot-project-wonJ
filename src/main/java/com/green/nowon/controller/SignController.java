@@ -30,7 +30,7 @@ public class SignController {
 	//회원가입후 로그인페이지로 이동
 	@PostMapping("/signup")
 	public String signup(MemberDTO dto) {
-		service.memberSave(dto);
+		service.saveMember(dto);
 		return "redirect:/signin";
 		
 	}

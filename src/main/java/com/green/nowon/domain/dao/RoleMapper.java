@@ -7,8 +7,6 @@ import com.green.nowon.domain.dto.MyuserDTO;
 @Mapper
 public interface RoleMapper {
 
-
-	void roleSave(MyuserDTO dto);
-
+	//void roleSave(MyuserDTO dto);
 
 }

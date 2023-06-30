@@ -3,11 +3,34 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.nowon.domain.dao.MemberMapper">
-  <insert id="memberSave" parameterType="com.green.nowon.domain.dto.MemberDTO" useGeneratedKeys="true" keyProperty="no">
-   	insert into member(id,password,email,name,birth,phone) values(#{id},#{password},#{email},#{name},#{birth},#{phone})
+  <insert id="saveMember" parameterType="com.green.nowon.domain.dto.MemberDTO" useGeneratedKeys="true" keyProperty="mno">
+   	insert into member(id,password,email,name,phone) values(#{id},#{password},#{email},#{name},#{phone})
   </insert>
-  <select id="findByNo2" resultType="com.green.nowon.domain.dto.MemberDTO">
-  	select * from member where id=#{id}
-  </select>
+  	<resultMap id="memberWithRolesResultMap" type="com.green.nowon.domain.dto.MemberDTO">
+	    <id property="mno" column="mno" />
+	    <result property="id" column="id" />
+	    <result property="password" column="password" />
+	    <result property="email" column="email" />
+	    <result property="name" column="name" />
+	    <result property="phone" column="phone" />
+	    <collection property="roles" ofType="com.green.nowon.domain.dto.MemberRole">
+	        <result column="roles" />
+	    </collection>
+	</resultMap>
+	<select id="findById" resultMap="memberWithRolesResultMap">
+	 	SELECT 
+	 		m.*,
+	 		GROUP_CONCAT(r.role) AS roles  			 
+		FROM member m 
+	 	JOIN  member_role r ON m.mno=r.member_no
+	 	WHERE 
+	 		id = #{id}
+	 	GROUP BY
+	       m.mno
+	</select>
 	
+	
+	<insert id="saveRole">
+		insert into member_role(member_no, role) values(#{memberNo},#{role})
+	</insert>
 </mapper>

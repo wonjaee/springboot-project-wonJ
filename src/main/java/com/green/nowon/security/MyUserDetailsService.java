@@ -22,12 +22,12 @@ public class MyUserDetailsService implements UserDetailsService{
 	@Autowired
 	private MemberMapper mapper;
 	@Override
-	public UserDetails loadUserByUsername(String no) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
 		
-		MemberDTO result = mapper.findByNo2(no).orElseThrow(()-> new UsernameNotFoundException("존재하지않아요"));
-
+		MemberDTO result = mapper.findById(id).orElseThrow(()-> new UsernameNotFoundException("존재하지않아요"));
+		System.out.println(">>"+result);
 		Set<SimpleGrantedAuthority> grantedAuthority=result.getRoles().stream()
-				.map(Role->new SimpleGrantedAuthority(Role.getRoleName())) 
+				.map(role->new SimpleGrantedAuthority(role.roleName())) 
 				.collect(Collectors.toSet());
 		System.out.println("role 테이블을 읽어옵니다.");
 		return new User(result.getId(), result.getPassword(), grantedAuthority);

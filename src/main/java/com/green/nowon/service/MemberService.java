@@ -4,6 +4,8 @@ import com.green.nowon.domain.dto.MemberDTO;
 
 public interface MemberService {
 
-	void memberSave(MemberDTO dto);
+	void saveMember(MemberDTO dto);
+
+	
 
 }
