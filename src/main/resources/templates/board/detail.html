@@ -5,23 +5,33 @@
     	 <script src="/js/detail.js"></script>
     </head>
 	<main>
-		<table>
-			<tr>
-				<td>글번호</td>
-				<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
-			<tr>
-				<td>작성자</td>
-				<td th:text="${detail.writer}"></td>
-			</tr>
-			<tr>
-				<td>글제목</td>
-				<td  th:text="${detail.title}"></td>
-			</tr>
-			<tr>
-				<td>글내용</td>
-				<td th:text="${detail.content}"></td>
-			</tr>
-		</table>
+		<form th:action="@{|/boards/${detail.no}|}" method="post">
+			<table>
+				<tr>
+					<td>글번호</td>
+					<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
+				<tr>
+					<td>작성자</td>
+					<td th:text="${detail.writer}"></td>
+				</tr>
+				<tr>
+					<td>글제목</td>
+					<td  th:text="${detail.title}"></td>
+				</tr>
+				<tr>
+					<td>글내용</td>
+					<td th:text="${detail.content}"></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="hidden" th:name="${_csrf.parameterName}"	th:value="${_csrf.token}"/>
+						<input type="hidden" name="_method" value="DELETE">
+						<button>삭제</button>
+					</td>
+					
+				</tr>
+			</table>
+		</form>
 		<hr>
 		<div id="reply-area">
 			<form id="form-reply">

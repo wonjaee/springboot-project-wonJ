@@ -2,9 +2,11 @@ package com.green.nowon.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.nowon.domain.dto.BoardDTO;
 import com.green.nowon.service.BoardService;
@@ -18,16 +20,16 @@ public class BoardController {
 	private final BoardService service;
 	
 	@GetMapping("/boards")
-	public String board(Model model) {
-		service.findAllProcess(model);
+	public String board(Model model,@RequestParam(defaultValue = "1") int page) {
+		service.findAllProcess(model,page);
 		return "board/list";
 	}
-	
+	//게시판 글쓰기 페이지 이동
 	@GetMapping("/boards/new")
 	public String write() {
 		return "board/write";
 	}
-	
+	//게시판 글쓰기 페이지에서 글쓰기후 게시글페이지로이동
 	@PostMapping("/boards/write")
 	public String write(BoardDTO dto) {
 		service.saveProcess(dto);
@@ -38,5 +40,11 @@ public class BoardController {
 	public String detail(@PathVariable long no, Model model) {
 		service.detailProcess(no,model);
 	return "board/detail";
+	}
+	
+	@PostMapping("/boards/{no}")
+	public String delete(@PathVariable("no")long no) {
+		service.deleteProcess(no);
+		return "redirect:/boards";
 	}
 }

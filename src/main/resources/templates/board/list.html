@@ -26,7 +26,21 @@
 						<td th:text="${dto.writer}">작성자</td>
 						<td th:text="${dto.createdDate}">작성일</td>
 					</tr>
+					<tr th:if="${#lists.isEmpty(list)}">
+						<td colspan="5" style="text-align: center;">게시글이 존재하지않습니다.</td>
+					</tr>
 				</table>
+				<div th:if="${from le to}">
+					<span th:if="${from >1}"> 
+						<a th:href="|/boards?page=${from-1}|">&lt;</a>
+					</span>
+					<span th:each="page:${#numbers.sequence(from,to)}"> <!-- ${#numbers.sequence(from,to)} //1~13 번까지 페이지 번호만 만들어줌 -->
+						<a th:href="|/boards?page=${page}|" th:text="${page}">페이지번호</a>
+					</span>
+					<span th:if="${to lt tot}">
+						<a th:href="|/boards?page=${to+1}|">&gt;</a>
+					</span>
+				</div>
 				
 			</div>
 		</div>

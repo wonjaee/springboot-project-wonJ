@@ -29,6 +29,7 @@ public class MemberDTO {
 	
 	private Set<MemberRole> roles=new HashSet<>();
 	
+	
 	public MemberDTO addRole(MemberRole myRole) {
 		roles.add(myRole);
 		return this;

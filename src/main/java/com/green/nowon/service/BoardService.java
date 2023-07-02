@@ -8,8 +8,10 @@ public interface BoardService {
 
 	void saveProcess(BoardDTO dto);
 
-	void findAllProcess(Model model);
+	void findAllProcess(Model model,int page);
 
 	void detailProcess(long no, Model model);
+
+	void deleteProcess(long no);
 
 }

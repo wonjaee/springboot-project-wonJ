@@ -3,10 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.nowon.domain.dao.BoardMapper">
+  <select id="findAll" resultType="com.green.nowon.domain.dto.BoardDTO">
+  	select * from board order by no desc 
+  	limit #{limit} offset #{offset}
+  </select>
+  
   <select id="saveAll" resultType="com.green.nowon.domain.dto.BoardDTO">
    	insert into board(title,content) values(#{title},#{content})
   </select>
+  
   <select id="findByNo" resultType="com.green.nowon.domain.dto.BoardDTO">
   	select * from board where no=#{no}
   </select>
+  
+  <select id="countAll" resultType="int">
+  	select count(*) from board
+  </select>
+  
+  <delete id="deleteNo" >
+  	delete from board where no=#{no}
+  </delete>
+  
+  
+  
 </mapper>
