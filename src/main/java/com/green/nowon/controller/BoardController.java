@@ -41,8 +41,8 @@ public class BoardController {
 		service.detailProcess(no,model);
 	return "board/detail";
 	}
-	
-	@PostMapping("/boards/{no}")
+	//게시판 디테일 삭제
+	@DeleteMapping("/boards/{no}")
 	public String delete(@PathVariable("no")long no) {
 		service.deleteProcess(no);
 		return "redirect:/boards";

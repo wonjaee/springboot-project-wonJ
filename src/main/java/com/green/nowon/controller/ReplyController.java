@@ -12,15 +12,16 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class RestController {
+public class ReplyController {
 	
-	private final ReplyService service;
 	/*
-	@ResponseBody
+	private final ReplyService service;
+	
 	@PostMapping("/boards/{boardNo}/replies")
 	public ResponseEntity<Boolean> save(ReplyDTO dto){
-	service.saveProcess(dto);
-	return ResponseEntity.ok().body(true);
+		service.saveProcess(dto);
+		
+		return ResponseEntity.ok().body(true);
 	}
 	*/
 }

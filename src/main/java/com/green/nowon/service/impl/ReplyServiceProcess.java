@@ -14,10 +14,12 @@ import lombok.RequiredArgsConstructor;
 public class ReplyServiceProcess implements ReplyService{
 
 	private final ReplyMapper mapper;
-	@Override
-	public void saveProcess(ReplyDTO dto) {
-		mapper.save(dto);
+	
+	
+	//@Override
+	//public void saveProcess(ReplyDTO dto) {
+	//	mapper.save(dto);
 		
-	}
+	//}
 
 }
