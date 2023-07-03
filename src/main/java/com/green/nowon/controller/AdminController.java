@@ -21,7 +21,7 @@ public class AdminController {
 	//admin default 페이지로 이동
 	@GetMapping("/admin")
 	public String adminIndex() {
-		return "admin/default";
+		return "admin/main";
 	}
 	//admin 상품리스트 페이지로 이동
 	@GetMapping("/admin/item")
