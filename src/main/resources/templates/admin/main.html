@@ -2,10 +2,11 @@
 <html xmlns:th="//www.thymeleaf.org" 
 	th:replace="~{layout/layout-admin::layout(~{::head},~{::main})}">
     <head>
-   	 
+   	 <meta name="_csrf" th:content="${_csrf.token}"/>
+		<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
     </head>
 	<main>
 		<h1>인덱스페이지</h1>
-		
+		<h2>header-admin.html</h2>
 	</main>
 </html>
