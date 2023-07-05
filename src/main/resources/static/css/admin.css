@@ -5,14 +5,12 @@ body{
 }
 body>header{
 	width: 250px;
-	background-color: #3f4b5c;
-	color: #fff;
+	background-color: #f4ecd7;
+	
 	min-height: 70vh;
 	margin-top: 150px;
 }
-body>header a{
-	color: #fff;
-}
+
 header>.wrap{
 	padding:20px;
 }
@@ -39,9 +37,6 @@ header>.wrap>dl dd div{
 	margin : 1em 0;
 	font-size: 13px;
 }
-header>.wrap>dl dd div a{
-	color: rgba(255,255,255,0.7);
-}
 
 header>.wrap>dl dt::after{
 	content:"";
@@ -63,4 +58,23 @@ header>.wrap>dl dt.open::after{
 main{
 	margin-left: 40px;
 	padding: 40px 0;
+}
+/*goods-write */
+#goods-write form > ul  div > label > input[type=file]{
+	display: none;
+	width:100px;
+}
+#goods-write .pre-img::before{
+	content:"이미지선택";
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	width:200px;
+	height: 200px;
+	background-color: #f4ecd7;
+	border: 1px dotted #a9a9a9;
+}
+.wrap>p{
+	width :200px;
+	height:100px;
 }

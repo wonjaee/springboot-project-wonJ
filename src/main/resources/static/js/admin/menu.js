@@ -4,13 +4,13 @@
 
  $(function(){
 	 $(".menu").click(memuClicked);
-	 $(".menu-wrap a").click(memuItemClicekd)
+	 $(".menu-wrap a").click(memuItemClicked)
  });
- function memuItemClicekd(event){
+ function memuItemClicked(event){
 	 event.preventDefault();
 	 
 	 $.get(
-		 $("this").attr("href"),
+		 $(this).attr("href"),
 		 function(resultMain){
 			 $("main>.wrap").html(resultMain);
 		 });
