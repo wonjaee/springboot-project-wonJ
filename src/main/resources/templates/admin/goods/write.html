@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org" >
+	<section id="goods-write">
+		<h1>메인영역</h1>
+		<div class="wrap">
+			<p>상품등록페이지</p>
+		</div>
+		<div>
+		<form>
+			<ul>
+				<li>
+					<label>상품명</label>
+					<input type="text" name="title">
+				</li>
+				<li>
+					<label>판매가격</label>
+					<input type="text" name="price" placeholder="숫자만입력">
+				</li>
+				<li>
+					<label>상품이미지</label>
+					<div>
+						<span>대표이미지</span>
+						<label class="pre-img"><input type="file" onchange="tepUpload(this)"></label>
+						<pre>권장크기 : 999 x 999</pre>
+					</div>
+				</li>
+				<li>
+					<label>추가이미지</label>
+					<div>
+						<label class="pre-img"><input type="file"></label>
+						<pre>권장크기 : 999 x 999</pre>
+					</div>
+				</li>
+				<li>
+					<label>상세설명</label>
+					<textarea name="content">상세설명</textarea>
+				</li>
+			</ul>
+		</form>
+		</div>
+	</section>
+</html>
