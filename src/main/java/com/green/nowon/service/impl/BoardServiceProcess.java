@@ -66,4 +66,10 @@ public class BoardServiceProcess implements BoardService{
 		
 	}
 
+	@Override
+	public void updateProcess(long no, BoardDTO dto) {
+		boardmapper.update(no,dto);
+		
+	}
+
 }
