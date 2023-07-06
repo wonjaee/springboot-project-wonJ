@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#goods-write > div > form > ul >li{
+	border-top: 1px solid #a9a9a9;
+	padding: 20px;
+}
+
+#goods-write > div > form > ul >li label{
+	display: block;
+	font-weight: 700;
+}
+#goods-write > div > form > ul >li pre{
+	font-size : 10px;
+	letter-spacing: -0.5px;
+}
+#goods-write .pre-img{
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	width :100px;
+}
+
+/*goods-write */
+#goods-write form > ul  div > label > input[type=file]{
+	display: none;
+	width:100px;
+}
+#goods-write .pre-img::before{
+	content:"이미지선택";
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	width:200px;
+	height: 200px;
+	background-color: #f4ecd7;
+	border: 1px dotted #a9a9a9;
+}
+.wrap>p{
+	width :200px;
+	height:100px;
+}

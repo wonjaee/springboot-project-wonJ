@@ -3,6 +3,9 @@
     <head>
    	 	<meta charset="UTF-8">
     	<title>Insert title here</title>
+    	<meta th:if="${_csrf}" name="_csrf" th:content="${_csrf.token}"/>
+		<!-- default header name is X-CSRF-TOKEN -->
+		<meta th:if="${_csrf}" name="_csrf_header" th:content="${_csrf.headerName}"/>
     	<script src="/webjars/jquery/jquery.min.js"></script>
     	<script src="/js/admin/menu.js"></script>
     	<script src="/js/admin/fileupload.js"></script>

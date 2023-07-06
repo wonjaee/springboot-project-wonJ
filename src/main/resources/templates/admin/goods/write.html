@@ -6,7 +6,7 @@
 			<p>상품등록페이지</p>
 		</div>
 		<div>
-		<form>
+		<form id="form-goods">
 			<ul>
 				<li>
 					<label>상품명</label>
@@ -18,19 +18,27 @@
 				</li>
 				<li>
 					<label>상품이미지</label>
-					<div>
+					<div class="def-img img-wrap">
 						<span>대표이미지</span>
-						<label class="pre-img"><input type="file" onchange="tepUpload(this)"></label>
+						<label class="pre-img"><input type="file" onchange="tempUpload(this)"></label>
 						<pre>권장크기 : 999 x 999</pre>
+						<input type="hidden" class="tempKey">
+						<input type="hidden" class="orgName">
+						<input type="hidden" class="def" name="def" value="true">
 					</div>
-				</li>
-				<li>
-					<label>추가이미지</label>
-					<div>
-						<label class="pre-img"><input type="file"></label>
-						<pre>권장크기 : 999 x 999</pre>
+				<div>
+					<span>추가이미지</span>
+					<div class="add-img">
+						<div class="img-wrap">
+							<label class="pre-img"><input type="file" onchange="tempUpload(this)"></label>
+							<pre>권장크기 : 999 x 999</pre>
+						</div>
 					</div>
+					<input type="hidden" class="tempKey">
+					<input type="hidden" class="orgName">
+				</div>
 				</li>
+				
 				<li>
 					<label>상세설명</label>
 					<textarea name="content">상세설명</textarea>

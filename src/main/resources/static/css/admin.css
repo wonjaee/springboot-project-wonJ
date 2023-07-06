@@ -59,22 +59,4 @@ main{
 	margin-left: 40px;
 	padding: 40px 0;
 }
-/*goods-write */
-#goods-write form > ul  div > label > input[type=file]{
-	display: none;
-	width:100px;
-}
-#goods-write .pre-img::before{
-	content:"이미지선택";
-	display: flex;
-	justify-content: center;
-	align-items:center;
-	width:200px;
-	height: 200px;
-	background-color: #f4ecd7;
-	border: 1px dotted #a9a9a9;
-}
-.wrap>p{
-	width :200px;
-	height:100px;
-}
+
