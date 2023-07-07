@@ -33,7 +33,7 @@ public class GoodsController {
 	@ResponseBody
 	@PostMapping("/admin/goods/temp-img")
 	public Map<String, String> tempUpload(MultipartFile temp){
-		fileService.tempUploadProcess(temp);
-		return null;
+		
+		return fileService.tempUploadProcess(temp);
 	}
 }

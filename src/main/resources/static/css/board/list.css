@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.write-wrap{
+
+	height : 500px;
+}
+.write-wrap2{
+	font-size:16px;
+	margin-top:50px;
+	width: 1000px;
+	
+}
+.write-wrap2 td{
+	padding: 20px;
+}

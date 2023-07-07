@@ -31,25 +31,23 @@ public class FileUploadServiceProcess implements FileUploadService{
 	private String tempPath;
 	@Value("${cloud.aws.s3.upload-path}")
 	private String uploadPath;
-	
+
 	@Override
 	public Map<String, String> tempUploadProcess(MultipartFile temp) {
 		Map<String, String> resultMap=new HashMap<>();
 		String newName=createNewFileName(temp.getOriginalFilename());
 		String tempKey=tempPath+newName;
-		
 		try(InputStream is=temp.getInputStream()) {
 			
-			
-			PutObjectRequest putObjectRequest=new PutObjectRequest(bucketName,tempKey,is,objectMetadata(temp));
+			PutObjectRequest putObjectRequest=new PutObjectRequest(bucketName, tempKey, is, objectMetadata(temp));
 			client.putObject(putObjectRequest.withCannedAcl(CannedAccessControlList.PublicRead));
-			log.info(tempKey);
-			String imgUrl=client.getUrl(bucketName, tempKey).toString().substring(6) ;// https://
-			log.info(imgUrl);
+			
+			String imgUrl=client.getUrl(bucketName, tempKey).toString().substring(6); // https://
+			
 			resultMap.put("imgUrl", imgUrl);
 			resultMap.put("orgName", temp.getOriginalFilename());
+			resultMap.put("newName", newName);
 			resultMap.put("tempKey", tempKey);
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -70,4 +68,3 @@ public class FileUploadServiceProcess implements FileUploadService{
 				+orgName.substring(idx); //확장자
 	}
 }
-

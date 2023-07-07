@@ -14,17 +14,17 @@
 	letter-spacing: -0.5px;
 }
 #goods-write .pre-img{
-	background-image: url("");
+background-image: url("");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width :100px;
 }
+
 
 /*goods-write */
 #goods-write form > ul  div > label > input[type=file]{
 	display: none;
-	width:100px;
+	
 }
 #goods-write .pre-img::before{
 	content:"이미지선택";
