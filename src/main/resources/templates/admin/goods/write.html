@@ -18,17 +18,18 @@
 				</li>
 				<li>
 					<label>상품이미지</label>
-					<div class="def-img img-wrap">
+					<div class="def-img">
 						<span>대표이미지</span>
-						<label class="pre-img"><input type="file" onchange="tempUpload(this)"></label>
-						<pre>권장크기 : 999 x 999</pre>
-						<input type="hidden" class="tempKey">
-						<input type="hidden" class="orgName">
-						<input type="hidden" class="def" name="def" value="true">
+						<div class="img-wrap">
+							<label class="pre-img"><input type="file" onchange="tempUpload(this)"></label>
+							<pre>권장크기 : 999 x 999</pre>
+							<input type="hidden" class="tempKey" name="tempKey">
+							<input type="hidden" class="orgName" name="orgName">
+						</div>
 					</div>
 				<div>
 					<span>추가이미지</span>
-					<div class="add-img">
+					<div class="add-img flex">
 						<div class="img-wrap">
 							<label class="pre-img"><input type="file" onchange="tempUpload(this)"></label>
 							<pre>권장크기 : 999 x 999</pre>
@@ -42,6 +43,9 @@
 				<li>
 					<label>상세설명</label>
 					<textarea name="content">상세설명</textarea>
+				</li>
+				<li>
+					<button type="button" onclick="goodsSubmited()">상품등록</button>
 				</li>
 			</ul>
 		</form>

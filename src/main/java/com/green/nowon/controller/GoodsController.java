@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.green.nowon.domain.dto.GoodSaveDTO;
 import com.green.nowon.service.FileUploadService;
+import com.green.nowon.service.GoodsService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,6 +20,8 @@ import lombok.RequiredArgsConstructor;
 public class GoodsController {
 	
 	private final FileUploadService fileService;
+	
+	private final GoodsService service;
 	
 	@ResponseBody
 	@GetMapping("/admin/goods/new")
@@ -36,4 +40,11 @@ public class GoodsController {
 		
 		return fileService.tempUploadProcess(temp);
 	}
+	@ResponseBody
+	@PostMapping("/admin/goods")
+	public boolean save(GoodSaveDTO dto) {
+		service.save(dto);
+		return true;
+	}
+	
 }

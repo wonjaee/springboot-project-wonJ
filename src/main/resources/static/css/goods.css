@@ -10,14 +10,8 @@
 	font-weight: 700;
 }
 #goods-write > div > form > ul >li pre{
-	font-size : 10px;
+	font-size : 15px;
 	letter-spacing: -0.5px;
-}
-#goods-write .pre-img{
-background-image: url("");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
 }
 
 
@@ -26,14 +20,26 @@ background-image: url("");
 	display: none;
 	
 }
+#goods-write .pre-img{
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+#goods-wrte .pre-img{
+	
+	width: 300px;
+	height: 300px;
+}
+
 #goods-write .pre-img::before{
-	content:"이미지선택";
+	content:"+";
 	display: flex;
 	justify-content: center;
 	align-items:center;
 	width:200px;
 	height: 200px;
-	background-color: #f4ecd7;
+	background-color:rgba(65, 43, 233, 0.44);
 	border: 1px dotted #a9a9a9;
 }
 .wrap>p{
