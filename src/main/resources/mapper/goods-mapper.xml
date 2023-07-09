@@ -3,7 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.nowon.domain.dao.GoodsMapper">
-	<insert id="save">insert into goods(title,price,content)
-	values(#{title},#{price},#{content})
-  	</insert>
+	<insert id="save" useGeneratedKeys="true" keyProperty="no"  parameterType="com.green.nowon.domain.dto.GoodSaveDTO">
+		insert into goods(title,price,content) values(#{title},#{price},#{content})
+	</insert>
+			
+	<insert id="saveImg" parameterType="com.green.nowon.domain.dto.S3UploadDTO">
+		insert into goods_image(bucket_key, org_name, gno)
+		values(#{bucketKey}, #{orgName} #{gno})
+	</insert>
 </mapper>

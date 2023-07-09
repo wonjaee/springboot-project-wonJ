@@ -12,8 +12,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.green.nowon.domain.dto.S3UploadDTO;
 import com.green.nowon.service.FileUploadService;
 
 import lombok.RequiredArgsConstructor;
@@ -67,4 +69,17 @@ public class FileUploadServiceProcess implements FileUploadService{
 		return UUID.randomUUID().toString()
 				+orgName.substring(idx); //확장자
 	}
+
+	@Override
+	public S3UploadDTO tempToUpload(S3UploadDTO img) {
+		//int idx=img.getTempKey().lastIndexOf("/");
+		String bucketkey=uploadPath+img.getNewName();
+		System.out.println(">>>>key:"+img.getTempKey());
+		CopyObjectRequest copyObjectRequest=new CopyObjectRequest(bucketName, img.getTempKey(), bucketName, bucketkey);
+		client.copyObject(copyObjectRequest.withCannedAccessControlList(CannedAccessControlList.PublicRead));
+		client.deleteObject(bucketName, img.getTempKey());
+		return img.bucketKey(bucketkey);
+	}
+
+
 }
