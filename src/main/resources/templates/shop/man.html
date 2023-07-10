@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org" th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
+    <head>
+   		<link rel="stylesheet" href="/css/shop/man.css">
+    </head>
+	<main>
+		<h2>남성복 페이지입니다.</h2>
+		<div>
+			<ul class="grid-container man-wrap flex" >
+				<li th:each="dto:${list}" th:value="${dto.no}" th:onclick="|goodsDetail(${dto.no})|">
+					<img th:src="${dto.defImg}">
+					<div>
+						<p th:text="${dto.title}"></p>
+						<div class="flex">
+							<p th:text="${dto.price}"></p><span>원</span>
+						</div>
+						<p th:if="${dto.stock>0}">주문가능</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</html>
