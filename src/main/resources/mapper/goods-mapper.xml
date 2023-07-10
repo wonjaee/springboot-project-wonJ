@@ -11,4 +11,9 @@
 		insert into goods_image(bucket_key, org_name,def, gno)
 		values(#{bucketKey}, #{orgName},#{def}, #{gno})
 	</insert>
+	<select id="findAll" resultType="com.green.nowon.domain.dto.GoodListDTO">
+		select * from goods g
+		join goods_image i on g.no=i.gno
+		where i.def=1
+	</select>
 </mapper>
