@@ -74,12 +74,10 @@ public class FileUploadServiceProcess implements FileUploadService{
 	public S3UploadDTO tempToUpload(S3UploadDTO img) {
 		//int idx=img.getTempKey().lastIndexOf("/");
 		String bucketkey=uploadPath+img.getNewName();
-		System.out.println(">>>>key:"+img.getTempKey());
+		//System.out.println(">>>>key:"+img.getTempKey());
 		CopyObjectRequest copyObjectRequest=new CopyObjectRequest(bucketName, img.getTempKey(), bucketName, bucketkey);
 		client.copyObject(copyObjectRequest.withCannedAccessControlList(CannedAccessControlList.PublicRead));
 		client.deleteObject(bucketName, img.getTempKey());
 		return img.bucketKey(bucketkey);
 	}
-
-
 }

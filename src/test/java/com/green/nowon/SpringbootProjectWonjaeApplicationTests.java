@@ -43,7 +43,7 @@ class SpringbootProjectWonjaeApplicationTests {
 	void 내용삽입() {
 		for(int i=1; i<100; i++) {
 			BoardDTO dto=new BoardDTO();
-			dto.setTitle("제목 테스트"+i);
+			dto.setTitle("제목테스트"+i);
 			dto.setContent("내용테스트"+i);
 			boardmapper.saveAll(dto);
 		}

@@ -15,6 +15,7 @@ public class S3UploadDTO {
 	private String bucketKey;
 	private String orgName;
 	private String newName;
+	private boolean def;
 	private long gno; //fk 상품pk
 	
 	public S3UploadDTO gno(long no) {

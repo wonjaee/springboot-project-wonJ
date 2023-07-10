@@ -34,10 +34,11 @@ public class AdminController {
 	public String adminItemNew() {
 		return "admin/item/write";
 	}
-	
+	/*
 	@PostMapping("/admin/item")
 	public String adminItem(ItemSaveDTO itemDto) {
 	service.saveProcess(itemDto);
 		return "redirect:/admin/item";
 	}
+	*/
 }

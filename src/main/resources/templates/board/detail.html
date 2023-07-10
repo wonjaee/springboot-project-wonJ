@@ -19,7 +19,7 @@
 	   	</script>
     </head>
 	<main>
-		<h2>board/detail page</h2>
+		
 		<form th:action="@{|/boards/${detail.no}|}" method="post">
 			<table id="basic">
 				<tr>
@@ -68,7 +68,7 @@
 						<td ><textarea id="summernote" name="content">[(${detail.content})]</textarea></td>
 					</tr>
 					<tr>
-						<td>
+						<td colspan="2">
 							<input type="hidden" th:name="${_csrf.parameterName}"	th:value="${_csrf.token}"/>
 							<input type="hidden" name="_method" value="PUT">
 							<button type="button" onclick="clickedCancel()">수정취소</button>

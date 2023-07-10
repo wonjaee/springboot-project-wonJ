@@ -1,12 +1,9 @@
 package com.green.nowon.domain.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
+@Data
 public class ItemSaveDTO {
-	
 	private String title;
 	private int price;
 	private int stock;

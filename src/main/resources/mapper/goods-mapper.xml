@@ -7,8 +7,8 @@
 		insert into goods(title,price,content) values(#{title},#{price},#{content})
 	</insert>
 			
-	<insert id="saveImg" parameterType="com.green.nowon.domain.dto.S3UploadDTO">
-		insert into goods_image(bucket_key, org_name, gno)
-		values(#{bucketKey}, #{orgName} #{gno})
+	<insert id="saveImg">
+		insert into goods_image(bucket_key, org_name,def, gno)
+		values(#{bucketKey}, #{orgName},#{def}, #{gno})
 	</insert>
 </mapper>

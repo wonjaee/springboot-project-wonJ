@@ -8,10 +8,12 @@ import com.green.nowon.service.AdminService;
 @Service
 public class AdminServiceProcess implements AdminService{
 
+	/*
 	@Override
 	public void saveProcess(ItemSaveDTO itemDto) {
 		// TODO Auto-generated method stub
 		
 	}
+	*/
 
 }

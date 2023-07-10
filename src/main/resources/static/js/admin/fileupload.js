@@ -4,7 +4,6 @@
 
 
 function goodsSubmited(){
-
 	var data=$("#form-goods").serialize();
 	var token = $("meta[name='_csrf']").attr("content");
 		var header = $("meta[name='_csrf_header']").attr("content");
@@ -43,9 +42,14 @@ var token = $("meta[name='_csrf']").attr("content");
 		//console.log(resultMap.orgName);
 		//console.log(resultMap.tempKey);
 		$(fileEl).parent().css("background-image",`url(${resultMap.imgUrl})`);
-		$(fileEl).parent(".img-wrap").find("orgName").val(resultMap.orgName);
-		$(fileEl).parent(".img-wrap").find("tempKey").val(resultMap.tempKey);
-			
+		$(fileEl).parents(".img-wrap").find(".orgName").val(resultMap.orgName);
+		$(fileEl).parents(".img-wrap").find(".newName").val(resultMap.newName);
+		$(fileEl).parents(".img-wrap").find(".tempKey").val(resultMap.tempKey);
+		 var def=$(fileEl).parents(".img-wrap").find(".def").val();
+			 if(def=="true")return;//대표이미지이면 함수종료	
+			 
+		
+	
 		}
 	})
 
