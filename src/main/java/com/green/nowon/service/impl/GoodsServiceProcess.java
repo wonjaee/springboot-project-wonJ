@@ -1,6 +1,6 @@
 package com.green.nowon.service.impl;
 
-import java.util.List;
+import java.util.List;import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import com.green.nowon.domain.dao.GoodsMapper;
 import com.green.nowon.domain.dto.GoodListDTO;
 import com.green.nowon.domain.dto.GoodSaveDTO;
+import com.green.nowon.domain.dto.GoodsDetailDTO;
+import com.green.nowon.domain.dto.GoodsImgListDTO;
 import com.green.nowon.domain.dto.S3UploadDTO;
 import com.green.nowon.service.FileUploadService;
 import com.green.nowon.service.GoodsService;
@@ -49,6 +51,17 @@ public class GoodsServiceProcess implements GoodsService{
 			System.out.println(dto);
 		});
 		
+	}
+
+	@Override
+	public void detailProcess(long goodsNo, Model model) {
+		GoodsDetailDTO detail=goodsMapper.detail(goodsNo).orElseThrow();
+		model.addAttribute("detail",detail);
+		
+		List<GoodsImgListDTO> img = goodsMapper.goodsImagesByDetailNo(goodsNo).stream()
+				.map(dto->dto.url(domain))
+				.collect(Collectors.toList());
+		model.addAttribute("imgs",img);
 	}
 
 	

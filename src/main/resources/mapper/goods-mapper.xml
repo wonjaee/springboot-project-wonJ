@@ -16,4 +16,12 @@
 		join goods_image i on g.no=i.gno
 		where i.def=1
 	</select>
+	<select id="detail" resultType="com.green.nowon.domain.dto.GoodsDetailDTO">
+		select * from goods
+		where no=#{goodsNo}
+	</select>
+	<select id="goodsImagesByDetailNo" resultType="com.green.nowon.domain.dto.GoodsImgListDTO">
+		select * from goods_image
+		where gno=${goodsNo}
+	</select>
 </mapper>

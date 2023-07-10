@@ -10,4 +10,6 @@ public interface GoodsService {
 
 	void listProcess(Model model);
 
+	void detailProcess(long goodsNo, Model model);
+
 }

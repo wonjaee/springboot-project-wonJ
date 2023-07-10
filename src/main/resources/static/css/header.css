@@ -2,7 +2,10 @@
 
 .header .logo-size a{
 	margin-left: 100px;
-	font-size: 100px;
+	font-size: 80px;
+	background-color: black;
+	color: white;
+	
 }
 .header .menu{
 	text-align: right;
