@@ -9,7 +9,7 @@
 					<div>
 						<p th:text="${dto.title}"></p>
 						<div class="flex">
-							<p th:text="${dto.price}"></p><span>원</span>
+							<p th:text="${#numbers.formatInteger(dto.price,3,'COMMA')}"></p><span>원</span>
 						</div>
 						<p th:if="${dto.stock>0}">주문가능</p>
 					</div>

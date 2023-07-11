@@ -13,14 +13,19 @@ input{
 	width:290px;
 	height: 50px;
 	border :1px solid grey;
-	border-radius: 8px;
 	padding-left:0.5em;
 }
 button{
-	width:290px;
-	height: 50px;
-	border :1px solid grey;
-	border-radius: 8px;
+	margin-top:20px;
+	display: block;
+    background-color: #212121;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    border: 1px solid #000;
+    margin-bottom: 2px;
+    width: 290px;
+    height: 40px;
 }
 input::placeholder {
  

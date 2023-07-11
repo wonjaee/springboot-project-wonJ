@@ -5,19 +5,43 @@
     </head>
 	<main class="view-size">
 		<section id="detail">
-   		<div class="wrap">
-   		<p>상세페이지</p>
+   		<div class="wrap flex">
    			<ol th:each="img:${imgs}">
    				<li th:style="|background-image: url('${img.url}');|"></li>
    			</ol>
+   			<ul>
+   				<li>
+   					<span style="font-size: 17px" th:text=${detail.title}>타이틀</span>
+	   			</li>
+	   			<li>
+	   				<span class="flex">
+	   					
+	   				</span>
+	   			</li>
+	   			<li>
+	   				<span>가격</span>
+	   				<span th:text="${#numbers.formatInteger(detail.price,3,'COMMA')}"></span>
+	   			</li>
+	   			<li>
+	   				<select >
+	   					<option>옵션을 선택해주세요.</option>
+	   					<option>S</option>
+	   					<option>M</option>
+	   					<option>L</option>
+	   				</select>
+	   			</li>
+	   			<li>
+  				<button>ADD CART</button>
+   				<button>BUY NOW</button>
+   				</li>
+   			</ul>
+   			
+   				
+  		
+   		</div>
    			<ol>
-   				<li th:text=${detail.title}>타이틀</li>
-   			</ol>
-   		</div>
-   		<div class="flex">
-	   		
-   		</div>
-   		
+  				
+  			</ol>
 	</section>
 	</main>
 </html>

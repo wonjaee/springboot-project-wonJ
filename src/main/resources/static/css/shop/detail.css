@@ -1,8 +1,43 @@
 @charset "UTF-8";
-#detail > div > ol:nth-child(2) > li{
-	width: 340px;
-	height: 500px;
+
+#detail > div.wrap.flex > ol > li{
+	margin-right: 30px;
+}
+
+#detail > div > ol:nth-child(1) > li{
+	width: 400px;
+	height:600px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+#detail > div.wrap.flex > ul > li:nth-child(4) > select{
+	border: none;
+	background-color: none;
+	width: 293px;
+}
+
+#detail > div > ul > li:nth-child(5) > button{
+	border-radius: 0;
+    width: 145px;
+    height: 42px;
+    line-height: 41px;
+    margin-right: 0;
+    font-family: 'helvetica_neue_med',sans-serif;
+    letter-spacing: 0.45px;
+    font-size: 11px;
+    font-weight: bold;
+}
+#detail > div > ul > li:nth-child(5) > button:nth-child(1){
+	background-color: white;
+	
+}
+
+#detail > div > ul > li:nth-child(5) > button:nth-child(2){
+	background-color: black;
+	color: white;
+}
+
+#detail > div > ul > li:nth-child(1){
+	margin-bottom: 20px;
 }

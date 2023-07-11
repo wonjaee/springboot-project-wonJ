@@ -61,3 +61,25 @@ body > header > div > div.menu > div > form > button:before{
 	width:30px;
 	height:30px;
 }
+body > header > div > div.menu > a:nth-child(1){
+	content:"";
+	background-image: url("/images/common/login.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	display: inline-flex;
+	width:30px;
+	height:30px;
+	font-size: 0;
+}
+body > header > div > div.menu > a:nth-child(2){
+	content:"";
+	background-image: url("/images/common/home.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	display: inline-flex;
+	width:30px;
+	height:30px;
+	font-size: 0;
+}
