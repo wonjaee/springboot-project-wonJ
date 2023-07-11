@@ -1,0 +1,8 @@
+@charset "UTF-8";
+#detail > div > ol:nth-child(2) > li{
+	width: 340px;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}

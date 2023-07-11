@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="//www.thymeleaf.org" th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
-    <head>
-   		<link rel="stylesheet" href="/css/shop/man.css">
-   		<script src="/js/common/goods.js"></script>
-    </head>
-	<main class="view-size">
+<html xmlns:th="//www.thymeleaf.org">
+   
+	<main class="view-size">	
 		<div>
 			<ul class="grid-container man-wrap flex" >
 				<li th:each="dto:${list}" th:value="${dto.no}" th:onclick="|goodsDetail(${dto.no})|">

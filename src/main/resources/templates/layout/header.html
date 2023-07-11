@@ -2,14 +2,25 @@
 <html xmlns:th="//www.thymeleaf.org"  
 	  xmlns:sec="//www.thymeleaf.org/extras/spring-security">
 	<link rel="stylesheet" href="/css/header.css">
-   <header>
+   <header class="view-size">
    		<div class="header">
 	   		<h1>header</h1>
-	   		<div class="logo-size">
-	   			<a href="/">oneJ</a>
+	   		<div>
+	   			<p>Hot Summer 2023</p>
+	   		</div>
+	   		<div class="flex wrap">
+		   		<div class="logo-size">
+		   			<a href="/">wonJ</a>
+		   		</div>
+		   		<div class=" menu-3">
+		   			<ul class="flex">
+		   				<li><a href="#">SALE</a></li>
+		   				<li><a href="/man">MAN</a></li>
+		   				<li><a href="#">WOMEN</a></li>
+		   			</ul>
+		   		</div>
 	   		</div>
 	   		<div class="menu">
-		   		
 		   		<th:block sec:authorize="isAnonymous()">
 			   		<a href="/signin">로그인</a>
 			   		<a href="/signup">회원가입</a>
@@ -18,13 +29,14 @@
 		    		<span>비회원</span>
 		    	</th:block>
 		   		<th:block sec:authorize="isAuthenticated()">
-		   			<a href="/man">MAN</a>
-		   			<a href="/boards">게시판</a>
-			    	<form action="/logout" method="POST" style="display: inline-block;">
-			    		<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-			    		<button>로그아웃</button>
-			    	</form>
-			    	<a sec:authorize="hasRole('ADMIN')" href="/admin">관리자페이지</a>
+		   			<div class="right board">
+		   				<a class="a" href="/boards"></a>
+				    	<form action="/logout" method="POST" style="display: inline-block;">
+				    		<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+				    		<button>로그아웃</button>
+				    	</form>
+				    	<a class="adminPage" sec:authorize="hasRole('ADMIN')" href="/admin"></a>
+			    	</div>
     			</th:block>
 	   		</div>
    		</div>
