@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="//www.thymeleaf.org" th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
     <head>
-    <!-- include libraries(jQuery, bootstrap) -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	
-	<!-- include summernote css/js -->
-	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-  </script>
+		<link rel="stylesheet" href="/css/board/write.css">
     </head>
-	<main>
+	<main class="view-size">
 		<h1>메인영역</h1>
 		<div class="wrap">
 		</div>
 		<form action="/boards/write" method="post">
 			<div>
-				<input type="text" name="title" placeholder="제목입력">
+				<input type="text" class="input-t" name="title" placeholder="제목입력">
 			</div>
+			<hr>
 			<div>
-		  		<textarea name="content"></textarea>
+		  		<textarea class="text-a" name="content"></textarea>
 		  	</div>
 		  	<div>
 		  		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>

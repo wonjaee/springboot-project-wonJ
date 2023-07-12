@@ -12,18 +12,15 @@
 		<form th:action="@{|/boards/${detail.no}|}" method="post">
 			<table id="basic">
 				<tr>
-					<td>글번호</td>
+					<td>번호</td>
 					<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
-				<tr>
-					<td>작성자</td>
-					<td th:text="${detail.writer}"></td>
 				</tr>
 				<tr>
-					<td>글제목</td>
+					<td>제목</td>
 					<td  th:text="${detail.title}"></td>
 				</tr>
 				<tr>
-					<td>글내용</td>
+					<td>내용</td>
 					<td th:text="${detail.content}"></td>
 				</tr>
 				<tr>

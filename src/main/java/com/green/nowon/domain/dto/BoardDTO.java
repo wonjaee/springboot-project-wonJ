@@ -12,7 +12,7 @@ public class BoardDTO {
 	private String title;
 	private String content;
 	private int readCount;
-	private String nickName;
+	private String writer;
 	private LocalDateTime createdDate;//자동구성
 	private LocalDateTime updatedDate;//자동구성
 }
