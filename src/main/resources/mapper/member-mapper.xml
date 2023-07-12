@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.nowon.domain.dao.MemberMapper">
   <insert id="saveMember" parameterType="com.green.nowon.domain.dto.MemberDTO" useGeneratedKeys="true" keyProperty="mno">
-   	insert into member(id,password,email,name,phone) values(#{id},#{password},#{email},#{name},#{phone})
+   	insert into member(id,password,email,name,nick_name,phone) values(#{id},#{password},#{email},#{name},#{nickName},#{phone})
   </insert>
   	<resultMap id="memberWithRolesResultMap" type="com.green.nowon.domain.dto.MemberDTO">
 	    <id property="mno" column="mno" />
@@ -13,6 +13,7 @@
 	    <result property="email" column="email" />
 	    <result property="name" column="name" />
 	    <result property="phone" column="phone" />
+	    <result property="nickName" column="nick_name" />
 	    <collection property="roles" ofType="com.green.nowon.domain.dto.MemberRole">
 	        <result column="roles" />
 	    </collection>

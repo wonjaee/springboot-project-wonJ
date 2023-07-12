@@ -23,7 +23,4 @@
   <delete id="deleteNo" >
   	delete from board where no=#{no}
   </delete>
-
-  
-  
 </mapper>

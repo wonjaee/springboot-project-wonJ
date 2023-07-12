@@ -22,7 +22,7 @@
 							<td>
 								<a th:href="|/boards/${dto.no}|" th:text="${dto.title}">글제목</a>
 							</td>
-							<td th:text="${dto.writer}">작성자</td>
+							<td th:text="${dto.nickName}">작성자</td>
 							<td th:text="${dto.createdDate}">작성일</td>
 						</tr>
 						<tr th:if="${#lists.isEmpty(list)}">

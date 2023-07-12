@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.green.nowon.domain.dto.BoardDTO;
 import com.green.nowon.domain.dto.MemberDTO;
 import com.green.nowon.domain.dto.MemberRole;
 import com.green.nowon.domain.dto.MyuserDTO;
