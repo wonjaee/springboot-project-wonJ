@@ -32,7 +32,6 @@ class SpringbootProjectWonjaeApplicationTests {
 		dto.setId("admin");
 		dto.setEmail("test1@test.com");
 		dto.setPassword(encoder.encode("1234"));
-		dto.setNickName("관리자");
 		dto.setName("테스트1");
 		dto.setPhone("12345");
 		memberMapper.saveMember(dto);

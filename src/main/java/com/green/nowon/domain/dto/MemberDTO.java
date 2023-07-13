@@ -26,7 +26,7 @@ public class MemberDTO {
 	private String email;
 	private String name;
 	private String phone;
-	private String nickName;
+	
 	
 	private Set<MemberRole> roles=new HashSet<>();
 	

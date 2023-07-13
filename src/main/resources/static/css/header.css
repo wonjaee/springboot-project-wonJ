@@ -83,3 +83,11 @@ body > header > div > div.menu > a:nth-child(2){
 	height:30px;
 	font-size: 0;
 }
+.menu-s{
+	line-height: 100px;
+	margin-left: 20px;
+}
+.menu-s li{
+	margin-left: 20px;
+	font-size: 14px;
+}
