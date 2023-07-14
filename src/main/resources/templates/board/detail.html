@@ -7,15 +7,20 @@
     </head>
 	<main class="view-size">
 		
-		<form th:action="@{|/boards/${detail.no}|}" method="post">
+		<form class=" detail-wrap" th:action="@{|/boards/${detail.no}|}" method="post">
 			<table id="basic">
-				<tr>
+				<tr >
 					<td>번호</td>
 					<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
 				</tr>
+				
+				<tr>
+					<td>작성자</td>
+					<td  th:text="${detail.nickName}"></td>
+				</tr>
 				<tr>
 					<td>제목</td>
-					<td  th:text="${detail.nickName}"></td>
+					<td  th:text="${detail.title}"></td>
 				</tr>
 				<tr>
 					<td>내용</td>
@@ -32,7 +37,7 @@
 			</table>
 		</form>
 		
-			<form th:action="@{|/boards/${detail.no}|}" method="post">
+			<form class="detail-wrap" th:action="@{|/boards/${detail.no}|}" method="post">
 				<table id="form-update" class="basic">
 					<tr>
 						<td>글번호</td>

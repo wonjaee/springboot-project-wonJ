@@ -90,3 +90,40 @@ body > header > div > div.menu > a:nth-child(2){
 	margin-left: 20px;
 	font-size: 14px;
 }
+
+.shopping{
+	margin-top:20px;
+	display: block;
+    background-color: #212121;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    border: 1px solid #000;
+    margin-bottom: 2px;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+}
+
+.purchase{
+	background-color: white;
+    color: black;
+    font-size: 11px;
+    border: 1px solid #000;
+    margin-bottom: 2px;
+    width: 150px;
+    margin-left: 105px;
+    height: 40px;
+    align-items: center;
+    margin-left: 1px;
+}
+
+#detail > div > ul > li{
+	width : 500px;
+	height: 70px;
+	margin-left: 50px;
+	border-top: 1px solid grey;
+}
+#detail > div > ul > li:nth-child(1){
+	border: none;
+}

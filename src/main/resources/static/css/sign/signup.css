@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-.signup-sec{
-	width: 500px;
-	height: 500px;
-	
-}
-.wrap .s-logo {
-	margin : 50px 0 50px 0;
-}
 input{
 	margin-top:0.5em;
 	width:290px;
@@ -31,4 +23,9 @@ input::placeholder {
  
   font-style: italic;
   
+}
+
+#registrationForm > form div{
+	
+	width: 500px;
 }
