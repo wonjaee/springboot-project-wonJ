@@ -17,6 +17,4 @@ public enum MemberRole {
 	public String roleName() {return roleName;}
 	public String koName() {return koName;}
 
-	
-	
 }

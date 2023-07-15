@@ -6,7 +6,7 @@
 function checkId(){
 	var id = $("#userId").val();
 	
-	   var token = $("meta[name='_csrf']").attr('content');
+	var token = $("meta[name='_csrf']").attr('content');
     var header = $("meta[name='_csrf_header']").attr('content');
     if(token && header) {
         $(document).ajaxSend(function(event, xhr, options) {
@@ -35,7 +35,7 @@ function checkId(){
 
 ////////////////////////////////회원가입 유효성검사 ////////////////////
    $(function () {
-        let checkID = RegExp(/^[a-z0-9]{6,20}$/);
+        let checkID = RegExp(/^[a-zA-Z0-9]{4,12}$/);
         let checkPW = RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*()_+])[A-Za-z\d~!@#$%^&*()_+]{8,}$/);
         let checkName = RegExp(/^[가-힣]|[A-Z]|[a-z]$/);
         let checkPhone = RegExp(/^[0-9]+$/);        
@@ -110,7 +110,7 @@ function checkId(){
             // userPhone
             $("#userPhone").blur(function(){
                 if($("#userPhone").val() == "" ){ 
-                    $(".phone").text("휴대폰번호를 입력해주세요.");              
+                    $(".phone").text("휴대폰번호를 입력해주세요.").css("color", "red");              
                     // $("#userPhone").focus();
                     return false;
                 }else if(!checkPhone.test($("#userPhone").val())) {
@@ -126,7 +126,7 @@ function checkId(){
             // userEmail
             $("#userEmail").blur(function(){
                 if($("#userEmail").val() == "" ){                
-                    $(".email").text("이메일을 입력해주세요.");
+                    $(".email").text("이메일을 입력해주세요.").css("color", "red");
                     $("#userEmail").focus();
                     return false;
                 }else if(!checkEmail.test($("#userEmail").val())) {
