@@ -4,6 +4,10 @@
 <head>
 	<link rel="stylesheet" href="/css/sign/signup.css">
 	<script src="/js/sign/signup.js"></script>
+	<meta name="_csrf" content="${_csrf.token}"/>
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>
+	<!-- ... -->
 </head>
 
 	  <main id="registrationForm" class="view-size flex center">
@@ -13,11 +17,10 @@
 	  		</div>
 		    <div >
 			    
-			     <input type="text" id="userID" name="id" placeholder="아이디를 입력하세요">
+			     <input type="text" id="userID" name="id" placeholder="아이디를 입력하세요" required oninput="checkId()">
 		    	 <div class="error-message id"></div>
 		    </div>
-		    <div>
-			     
+		    <div> 
 			     <input type="password" id="userPW" name="password"  placeholder="비밀번호를 입력하세요">
 		     	 <div class="error-message password"></div>
 		    </div>

@@ -35,5 +35,12 @@ public class MemberServiceProcess implements MemberService{
 	*/
 	}
 
+	@Override
+	public int idCheck(String id) {
+		int cnt =mapper.findByIdOne(id);
+		System.out.println(">>>>>>>"+cnt+id);
+		return cnt;
+	}
+
 
 }

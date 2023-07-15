@@ -2,8 +2,39 @@
  * 
  */
 
+//////////////////////////아이디 중복확인 (미완성)//////////////////////
+function checkId(){
+	var id = $("#userId").val();
+	
+	   var token = $("meta[name='_csrf']").attr('content');
+    var header = $("meta[name='_csrf_header']").attr('content');
+    if(token && header) {
+        $(document).ajaxSend(function(event, xhr, options) {
+            xhr.setRequestHeader(header, token);
+        });
+    }
+
+	$.ajax({
+		url:"/signup/check",
+		type:"POST",
+		data:{id:id},
+		success:function(cnt){
+			if(cnt !=1){
+				$(".id").text("사용가능합니다.")
+				console.log("1");
+			}else{
+				$(".id").text("아이디가 존재합니다.")
+				console.log("0");
+			}
+		},
+		error:function(request, error){
+			console.log("에러.");
+		}
+	})
+}
+
+////////////////////////////////회원가입 유효성검사 ////////////////////
    $(function () {
-        // FIXME: 필요 스크립트 전개 영역
         let checkID = RegExp(/^[a-z0-9]{6,20}$/);
         let checkPW = RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*()_+])[A-Za-z\d~!@#$%^&*()_+]{8,}$/);
         let checkName = RegExp(/^[가-힣]|[A-Z]|[a-z]$/);
@@ -110,7 +141,7 @@
             // userRecommendId
             $("#userRecommendId").blur(function(){
                 if(!checkRecommendId.test($("#userRecommendId").val())){
-                    $(".recommend").text("아이디 형식에 맞게 입력해주세요.");               
+                    $(".recommend").text("아이디 형식에 맞게 입력해주세요.").css("color", "red");;               
                     return false;            
                 }else if(checkID.test($("#userRecommendId").val())) {
                     $(".recommend").text("");
@@ -122,6 +153,7 @@
            
         // button 클릭시        
         $('.btn-point').click(function(){
+			var nameValue=$("#userName").val()
             if($("#userID").val() == "" || $("#userPW").val() == "" || $("#userName").val() == "" || $("#userPhone").val() == "" || $("#userEmail").val() == "" ){                
                 alert("공백을 입력하세요.");               
                 return false;
@@ -132,12 +164,7 @@
                 alert("형식에 맞춰 작성해주세요.")                               
                 return false;
             }else {
-                console.log("userID: " + `${$("#userID").val()}`);
-                console.log(`userPW: ${$("#userPW").val()}`);
-                console.log(`userName: ${$("#userName").val()}`);
-                console.log(`userPhone: ${$("#userPhone").val()}`);
-                console.log(`userEmail: ${$("#userEmail").val()}`);
-                console.log(`userRecommendId: ${$("#userRecommendId").val()}`);
+        		alert(nameValue+"님 회원가입을 환영합니다.")
                 return true;
             }                      
         });        

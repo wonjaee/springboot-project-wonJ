@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="//www.thymeleaf.org" 
+<html xmlns:th="//www.thymeleaf.org " xmlns:sec="//www.thymeleaf.org/extras/spring-security"
 		th:replace="~{layout/layout-common :: layout(~{::head}, ~{::main})}">
     <head>
     	<link rel="stylesheet" href="/css/board/detail.css">
@@ -27,7 +27,7 @@
 					<td th:text="${detail.content}"></td>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="2" sec:authorize="isAuthenticated()"  th:if="${detail.nickName eq #authentication.name}">
 						<button type="button" id="btn-update">수정</button>
 						<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}"	th:value="${_csrf.token}"/>
 						<input type="hidden" name="_method" value="DELETE">
@@ -36,7 +36,6 @@
 				</tr>
 			</table>
 		</form>
-		
 			<form class="detail-wrap" th:action="@{|/boards/${detail.no}|}" method="post">
 				<table id="form-update" class="basic">
 					<tr>
@@ -63,7 +62,6 @@
 							<button type="button" onclick="clickedCancel()">수정취소</button>
 							<button type="submit">수정완료</button>
 						</td>
-						 
 					</tr>
 				</table>
 			</form>

@@ -3,6 +3,8 @@ package com.green.nowon.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.green.nowon.domain.dto.MemberDTO;
 import com.green.nowon.service.MemberService;
@@ -33,5 +35,11 @@ public class SignController {
 		service.saveMember(dto);
 		return "redirect:/signin";
 		
+	}
+	@ResponseBody
+	@PostMapping("/signup/check")
+	public int idCheck(@RequestParam("id") String id) {
+		int cnt = service.idCheck(id);
+		return cnt;
 	}
 }

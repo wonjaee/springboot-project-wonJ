@@ -31,4 +31,7 @@
 	<insert id="saveRole">
 		insert into member_role(member_no, role) values(#{memberNo},#{role})
 	</insert>
+	<select id="findByIdOne" resultType="com.green.nowon.domain.dto.MemberDTO">
+		select count(id) from member where id=#{id}
+	</select>
 </mapper>

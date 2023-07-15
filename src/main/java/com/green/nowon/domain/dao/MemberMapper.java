@@ -19,5 +19,7 @@ public interface MemberMapper {
 
 	Optional<MemberDTO> findById(String id);
 	
+	int findByIdOne(String id);
+	
 
 }

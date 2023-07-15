@@ -6,6 +6,8 @@ public interface MemberService {
 
 	void saveMember(MemberDTO dto);
 
+	int idCheck(String id);
+
 	
 
 }
