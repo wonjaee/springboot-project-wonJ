@@ -35,7 +35,7 @@
             // userPW
             $("#userPW").blur(function(){
                 if($("#userPW").val() == "" ){                
-                    $(".password").text("비밀번호를 입력해주세요");
+                    $(".password").text("비밀번호를 입력해주세요").css("color","red");
                     $("#userPW").focus();
                     return false;
                 }else if(!checkPW.test($("#userPW").val())) {
