@@ -6,25 +6,24 @@
     	<script src="/js/detail.js"></script>
     </head>
 	<main class="view-size">
-		
-		<form class=" detail-wrap" th:action="@{|/boards/${detail.no}|}" method="post">
-			<table id="basic">
+		<form class=" detail-wrap flex center" th:action="@{|/boards/${detail.no}|}" method="post">
+			<table id="basic" >
 				<tr >
-					<td>번호</td>
+					<td class="td-tag">번호</td>
 					<td colspan="3" th:text="${detail.no}" id="detail-board-no"></td>
 				</tr>
 				
 				<tr>
-					<td>작성자</td>
-					<td  th:text="${detail.nickName}"></td>
+					<td class="td-tag">작성자</td>
+					<td class="td-tag2" th:text="${detail.nickName}"></td>
 				</tr>
 				<tr>
-					<td>제목</td>
-					<td  th:text="${detail.title}"></td>
+					<td class="td-tag">제목</td>
+					<td class="td-tag2" th:text="${detail.title}"></td>
 				</tr>
 				<tr>
-					<td>내용</td>
-					<td th:text="${detail.content}"></td>
+					<td class="td-tag">내용</td>
+					<td class="td-tag2" th:text="${detail.content}"></td>
 				</tr>
 				<tr>
 					<td colspan="2" sec:authorize="isAuthenticated()"  th:if="${detail.nickName eq #authentication.name}">

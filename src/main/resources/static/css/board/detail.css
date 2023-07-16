@@ -71,8 +71,26 @@ a{color: black;}
     align-items: center;
     margin-left: 1px;
 }
+#basic{
+	border-collapse: collapse;
+}
+
+#basic tr{
+	border-bottom: 1px solid #ffa07a;
+	background-color: #fffafa;
+}
+#basic .td-tag{
+	text-align: center;
+}
+#basic .td-tag2{
+	width:500px;
+}
+#basic td{
+	width : 200px;
+}
 .detail-wrap{
 	width : 1300px;
+	margin-top: 70px;
 }
 #basic > tbody > tr{
 	width:100px;

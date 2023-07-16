@@ -26,14 +26,14 @@ class SpringbootProjectWonjaeApplicationTests {
 	
 	@Commit
 	@Transactional
-	@Test
+	//@Test
 	void 회원가입() {
 		MemberDTO dto=new MemberDTO();
 		dto.setId("admin");
 		dto.setEmail("test1@test.com");
-		dto.setPassword(encoder.encode("1234"));
-		dto.setName("테스트1");
-		dto.setPhone("12345");
+		dto.setPassword(encoder.encode("!@"));
+		dto.setName("관리자");
+		dto.setPhone("01029779895");
 		memberMapper.saveMember(dto);
 		memberMapper.saveRole(dto.getMno(),MemberRole.ADMIN);
 	}
